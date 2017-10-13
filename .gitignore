@@ -1,3 +1,4 @@
 /.idea
-/vendor
-/src/thrift-go-gen
+/src/vendor
+/src/server/thrift/thrift-go-gen
+/src/glide.lock

@@ -1,8 +1,9 @@
 package main
 
+/*
 import (
 	"../thrift-go-gen/leader"
-	"git.apache.org/thrift.git/lib/go/thrift"
+	"git.apache.org.bak/thrift.git/lib/go/thrift"
 	"fmt"
 	"context"
 	"log"
@@ -22,8 +23,6 @@ func (fdi *leaderThrift) Register(ctx context.Context, data *leader.Leader) (x b
 }
 
 func main() {
-
-
 	handler := &leaderThrift{}
 	processor := leader.NewLeaderThriftProcessor(handler)
 	serverTransport, err := thrift.NewTServerSocket(HOST + ":" + PORT)
@@ -38,4 +37,4 @@ func main() {
 	server := thrift.NewTSimpleServer4(processor, serverTransport, transportFactory, protocolFactory)
 	fmt.Println("Running at:", HOST + ":" + PORT)
 	server.Serve()
-}
+}*/

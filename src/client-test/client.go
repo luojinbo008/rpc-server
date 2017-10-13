@@ -5,7 +5,7 @@ import (
 	"net"
 	"fmt"
 	"context"
-	"../thrift-go-gen/leader"
+	"../server/thrift/thrift-go-gen/leader"
 	"log"
 )
 
