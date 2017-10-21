@@ -2,11 +2,12 @@ package main
 
 import (
 	"git.apache.org/thrift.git/lib/go/thrift"
+	"../server/thriftRPC/guide"
 	"net"
 	"fmt"
 	"context"
-	"../server/thrift/thrift-go-gen/leader"
 	"log"
+	"time"
 )
 
 const (
@@ -14,7 +15,8 @@ const (
 	PORT = "8080"
 )
 
-func main()  {
+func main() {
+	fmt.Println(time.Now())
 	tSocket, err := thrift.NewTSocket(net.JoinHostPort(HOST, PORT))
 	if err != nil {
 		log.Fatalln("tSocket error:", err)
@@ -24,15 +26,16 @@ func main()  {
 
 	protocolFactory := thrift.NewTBinaryProtocolFactoryDefault()
 
-	client := leader.NewLeaderThriftClientFactory(transport, protocolFactory)
+	client := guide.NewGuideThriftClientFactory(transport, protocolFactory)
 
 	if err := transport.Open(); err != nil {
 		log.Fatalln("Error opening:", HOST + ":" + PORT)
 	}
 	defer transport.Close()
 
+	fmt.Println(time.Now())
 
-	data := leader.Leader{
+	data := guide.Guide{
 		1,
 		1,
 		"test_123",
@@ -44,4 +47,5 @@ func main()  {
 		}
 	d, err := client.Register(context.Background(), &data)
 	fmt.Println(d)
+	fmt.Println(time.Now())
 }

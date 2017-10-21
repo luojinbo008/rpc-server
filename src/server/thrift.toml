@@ -1,0 +1,12 @@
+[server]
+#"thrift"
+type = "thrift"
+
+[components.mysql]
+type = "container"
+
+[components.mysql.guide]
+type = "mysql"
+Driver = "mysql"
+Dsn = "webuser:123456@tcp(192.168.136.45:3306)/guide"
+Reads = ["webuser:123456@tcp(192.168.136.45:3306)/guide"]
